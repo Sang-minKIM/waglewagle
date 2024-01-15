@@ -1,9 +1,9 @@
-import createRouter from "./JS/router.js";
+import { createRouter } from "./JS/router.js";
 import createPages from "./JS/pages.js";
-import { screenSizeHandler } from "./JS/controllers/handlers/screenSizeHandler.js";
-import { initEventListener } from "./JS/controllers/init/initEventListener.js";
+import { screenSizeHandler } from "./JS/controllers/handlers/screenSizeHandler.ts";
+import { initEventListener } from "./JS/controllers/init/initEventListener.ts";
 
-import { closeDialog } from "./JS/controllers/handlers/modalHandler.js";
+import { closeDialog } from "./JS/controllers/handlers/modalHandler.ts";
 
 (function () {
   screenSizeHandler();
@@ -14,7 +14,7 @@ const container = document.getElementById("app");
 
 const pages = createPages(container);
 
-const router = createRouter();
+const router: any = createRouter();
 
 router
   .addRoute("/", pages.home)
@@ -29,10 +29,10 @@ router
  */
 const NAV_A_SELECTOR = "a[data-navigate]";
 
-document.body.addEventListener("click", (event) => {
+document.body.addEventListener("click", (event: any) => {
   const { target } = event;
 
-  if (target.matches(NAV_A_SELECTOR)) {
+  if (target?.matches(NAV_A_SELECTOR)) {
     event.preventDefault();
     router.navigate(target.href);
   }
