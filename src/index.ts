@@ -1,5 +1,5 @@
-import { createRouter } from "./JS/router.js";
-import createPages from "./JS/pages.js";
+import { createRouter } from "./JS/router.ts";
+import createPages from "./JS/pages.ts";
 import { screenSizeHandler } from "./JS/controllers/handlers/screenSizeHandler.ts";
 import { initEventListener } from "./JS/controllers/init/initEventListener.ts";
 
