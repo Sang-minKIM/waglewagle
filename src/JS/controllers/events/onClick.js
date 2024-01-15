@@ -1,12 +1,8 @@
 import { textCountHandler } from "../handlers/textCountHandler.js";
-import { gotoNearWagle } from "../handlers/nearWagleHandler";
+import { gotoNearWagle } from "../handlers/nearWagleHandler.js";
 import { likePostHandler } from "../handlers/likePostHandler.js";
-import {
-  uploadCardHandler,
-  tagSelectHandler,
-  imgSelectHandler,
-} from "../handlers/uploadCardHandler";
-import { closeDialog } from "../handlers/modalHandler.js";
+import { uploadCardHandler, tagSelectHandler, imgSelectHandler } from "../handlers/uploadCardHandler.js";
+import { closeDialog } from "../handlers/modalHandler.ts";
 
 const clickHandlerMap = {
   "js-onUpload": uploadCardHandler,

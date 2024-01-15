@@ -1,4 +1,4 @@
-import { closeDialog } from "../handlers/modalHandler.js";
+import { closeDialog } from "../handlers/modalHandler.ts";
 import { renderHotStations, renderModal, renderPin, renderTagList, renderWagleList } from "../render.js";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -13,12 +13,15 @@ export const fetchCardList = async (stationId, tagId) => {
   const tagParam = tagId ? tagId : "";
 
   try {
-    const response = await fetch(`${BASE_URL}${endpoint}?stationId=${correctedStationId}&pageSize=${pageSize}&pageNumber=${pageNumber}&tagId=${tagParam}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      `${BASE_URL}${endpoint}?stationId=${correctedStationId}&pageSize=${pageSize}&pageNumber=${pageNumber}&tagId=${tagParam}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);

@@ -1,4 +1,4 @@
-import { showDialog } from "./modalHandler.js";
+import { showDialog } from "./modalHandler.ts";
 import { fetchCardList, fetchUploadImg } from "../api/getApi.js";
 import { getStationId } from "../utils/getStationId.js";
 import { uploadCard } from "../api/postApi.js";
