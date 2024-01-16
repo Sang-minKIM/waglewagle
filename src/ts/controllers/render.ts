@@ -1,13 +1,12 @@
-import { tagList } from "../data.js";
-import { stationGrid } from "../data.js";
-import { WagleLinkView } from "../views/components/ButtonViews.js";
-import { HotStationListView } from "../views/components/HotStationListView.js";
-import { TagView } from "../views/components/TagView.js";
-import { WagleEmptyView } from "../views/components/wagle/WagleEmptyView.js";
-import { WagleMainView } from "../views/components/wagle/WagleMainView.js";
-import { UploadView } from "../views/pages/UploadView.js";
+import { tagList } from "../data.ts";
+import { stationGrid } from "../data.ts";
+import { WagleLinkView } from "../views/components/ButtonViews.ts";
+import { HotStationListView } from "../views/components/HotStationListView.ts";
+import { TagView } from "../views/components/TagView.ts";
+import { WagleEmptyView } from "../views/components/wagle/WagleEmptyView.ts";
+import { WagleMainView } from "../views/components/wagle/WagleMainView.ts";
+import { UploadView } from "../views/pages/UploadView.ts";
 
-const app = document.getElementById("app");
 const modal = document.querySelector(".modal");
 
 export const renderWagleList = (cardList) => {
@@ -29,7 +28,9 @@ export const renderTagList = (tags) => {
   // 전체 인덱스 제일 앞에 추가
   tags.unshift(0);
   const headerTag = document.querySelector(".wagle__header__tag-list");
-  headerTag.innerHTML = tags.map((tagId) => TagView(tagId, tagList[tagId].img, tagList[tagId].text, "wagle")).join(" ");
+  headerTag.innerHTML = tags
+    .map((tagId) => TagView(tagId, tagList[tagId].img, tagList[tagId].text, "wagle"))
+    .join(" ");
 };
 
 export const renderPin = (stations) => {

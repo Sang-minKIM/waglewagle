@@ -1,7 +1,7 @@
 import { showDialog } from "./modalHandler.ts";
-import { fetchCardList, fetchUploadImg } from "../api/getApi.js";
-import { getStationId } from "../utils/getStationId.js";
-import { uploadCard } from "../api/postApi.js";
+import { fetchCardList, fetchUploadImg } from "../api/getApi.ts";
+import { getStationId } from "../utils/getStationId.ts";
+import { uploadCard } from "../api/postApi.ts";
 
 let selectedTagId = "";
 let selectedImgId = "";

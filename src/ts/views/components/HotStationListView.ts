@@ -1,5 +1,5 @@
-import { stationList } from "../../data.js";
-import { HotStationView } from "./HotStationView.js";
+import { stationList } from "../../data.ts";
+import { HotStationView } from "./HotStationView.ts";
 
 export const HotStationListView = (stations) => {
   return `

@@ -1,11 +1,11 @@
-import { stationList } from "../../data.js";
-import { UploadHeaderView } from "../components/upload/UploadHeaderView.js";
-import { UploadPhotoListView } from "../components/upload/UploadPhotoListView.js";
-import { UploadTagListView } from "../components/upload/UploadTagListView.js";
+import { stationList } from "../../data.ts";
+import { UploadHeaderView } from "../components/upload/UploadHeaderView.ts";
+import { UploadPhotoListView } from "../components/upload/UploadPhotoListView.ts";
+import { UploadTagListView } from "../components/upload/UploadTagListView.ts";
 
-export const UploadView = (imageList) => {
+export const UploadView = (imageList: Record<string, string>[]) => {
   const { pathname } = window.location;
-  const stationId = pathname.split("/")[2];
+  const stationId = Number(pathname.split("/")[2]);
   const currStation = stationList[stationId];
   return `
 <form method="dialog" class="upload">  

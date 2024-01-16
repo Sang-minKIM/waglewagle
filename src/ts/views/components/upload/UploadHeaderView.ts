@@ -1,4 +1,4 @@
-export const UploadHeaderView = (currStation) => {
+export const UploadHeaderView = (currStation: string) => {
   return `
 <header class="upload__header">
   <menu class="station__title">

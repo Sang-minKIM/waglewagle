@@ -1,9 +1,9 @@
-import { stationGrid } from "../../data.js";
+import { stationGrid } from "../../data.ts";
 import {
   NearWagleTooltipView,
   NearWagleView,
   WagleLinkLoaderView,
-} from "../components/ButtonViews.js";
+} from "../components/ButtonViews.ts";
 
 export const HomeView = () => {
   return `

@@ -1,5 +1,5 @@
-import { getStationId } from "../utils/getStationId.js";
-import { fetchCardList } from "./getApi.js";
+import { getStationId } from "../utils/getStationId.ts";
+import { fetchCardList } from "./getApi.ts";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 

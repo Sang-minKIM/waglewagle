@@ -1,10 +1,10 @@
-import { getTime } from "../../../controllers/utils/getDate.js";
-import { tagList } from "../../../data.js";
-import { BothCardView } from "./BothCardView.js";
-import { CardFooterView } from "./CardFooterView.js";
-import { CardHeaderView } from "./CardHeaderView.js";
-// import { OnlyImgCardView } from "./OnlyImgCardView.js";
-import { OnlyTextCardView } from "./OnlyTextCardView.js";
+import { getTime } from "../../../controllers/utils/getDate.ts";
+import { tagList } from "../../../data.ts";
+import { BothCardView } from "./BothCardView.ts";
+import { CardFooterView } from "./CardFooterView.ts";
+import { CardHeaderView } from "./CardHeaderView.ts";
+// import { OnlyImgCardView } from "./OnlyImgCardView.ts";
+import { OnlyTextCardView } from "./OnlyTextCardView.ts";
 
 export const CardView = ({ nickname, content, imageUrl, like, createdTime, id, tagId }) => {
   const profileImg = tagId ? tagList[tagId].img : tagList[0].img;

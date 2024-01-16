@@ -4,7 +4,7 @@ export const UploadLinkView = () => {
 `;
 };
 
-export const WagleLinkLoaderView = (stationId) => {
+export const WagleLinkLoaderView = (stationId: number) => {
   return `
 <a data-navigate href="station/${stationId}"  class="subway-line__station" id="${stationId}"></a>
   `;

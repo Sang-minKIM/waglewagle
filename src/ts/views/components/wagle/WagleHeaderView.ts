@@ -1,10 +1,9 @@
-import { stationList } from "../../../data.js";
-import { WagleTagListView } from "./WagleTagListView.js";
+import { stationList } from "../../../data.ts";
+import { WagleTagListView } from "./WagleTagListView.ts";
 
-export const WagleHeaderView = (stationId) => {
+export const WagleHeaderView = (stationId: string) => {
   const currStationIdx = Number(stationId);
-  const prevStationIdx =
-    (currStationIdx - 1 + stationList.length) % stationList.length;
+  const prevStationIdx = (currStationIdx - 1 + stationList.length) % stationList.length;
   const nextStationIdx = (currStationIdx + 1) % stationList.length;
   return `
 <header class="wagle__header">

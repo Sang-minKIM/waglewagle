@@ -1,4 +1,4 @@
-import { CardView } from "../card/CardView.js";
+import { CardView } from "../card/CardView.ts";
 
 export const WagleMainView = (cardList) => {
   return `
