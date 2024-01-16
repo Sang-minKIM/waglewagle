@@ -1,5 +1,5 @@
 import { createRouter } from "./JS/router.ts";
-import createPages from "./JS/pages.ts";
+import { createPages } from "./JS/pages.ts";
 import { screenSizeHandler } from "./JS/controllers/handlers/screenSizeHandler.ts";
 import { initEventListener } from "./JS/controllers/init/initEventListener.ts";
 
@@ -10,7 +10,7 @@ import { closeDialog } from "./JS/controllers/handlers/modalHandler.ts";
   initEventListener();
 })();
 
-const container = document.getElementById("app");
+const container = document.getElementById("app") as HTMLDivElement;
 
 const pages = createPages(container);
 
@@ -19,7 +19,6 @@ const router: any = createRouter();
 router
   .addRoute("/", pages.home)
   .addRoute("/station/:id", pages.detail)
-  .addRoute("/upload", pages.upload)
   .setNotFound(pages.notFound)
   .start();
 
