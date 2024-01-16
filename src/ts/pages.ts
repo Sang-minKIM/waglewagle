@@ -3,7 +3,7 @@ import {
   getHomeInfo,
   fetchTagList,
   getHotStations,
-} from "./controllers/api/getApi.js";
+} from "./controllers/api/getApi.ts";
 import { HomeView } from "./views/pages/HomeView.ts";
 import { WagleView } from "./views/pages/WagleView.ts";
 
@@ -14,10 +14,10 @@ export const createPages = (container: HTMLDivElement) => {
     getHomeInfo();
   };
 
-  const detail = (params: string) => {
+  const detail = (params: { id: string }) => {
     const { id: stationId } = params;
     container.innerHTML = WagleView(stationId);
-    fetchCardList(stationId);
+    fetchCardList({ stationId });
     fetchTagList(Number(stationId) + 1);
   };
 
@@ -29,6 +29,5 @@ export const createPages = (container: HTMLDivElement) => {
     home,
     detail,
     notFound,
-    upload,
   };
 };

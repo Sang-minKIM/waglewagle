@@ -1,9 +1,9 @@
-import { createRouter } from "./JS/router.ts";
-import { createPages } from "./JS/pages.ts";
-import { screenSizeHandler } from "./JS/controllers/handlers/screenSizeHandler.ts";
-import { initEventListener } from "./JS/controllers/init/initEventListener.ts";
+import { createRouter } from "./ts/router.ts";
+import { createPages } from "./ts/pages.ts";
+import { screenSizeHandler } from "./ts/controllers/handlers/screenSizeHandler.ts";
+import { initEventListener } from "./ts/controllers/init/initEventListener.ts";
 
-import { closeDialog } from "./JS/controllers/handlers/modalHandler.ts";
+import { closeDialog } from "./ts/controllers/handlers/modalHandler.ts";
 
 (function () {
   screenSizeHandler();
