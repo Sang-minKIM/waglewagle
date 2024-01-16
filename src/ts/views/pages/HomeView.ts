@@ -1,5 +1,9 @@
 import { stationGrid } from "../../data.js";
-import { NearWagleTooltipView, NearWagleView, WagleLinkLoaderView } from "../components/ButtonViews.js";
+import {
+  NearWagleTooltipView,
+  NearWagleView,
+  WagleLinkLoaderView,
+} from "../components/ButtonViews.js";
 
 export const HomeView = () => {
   return `
@@ -18,7 +22,7 @@ export const HomeView = () => {
       <div class="subway-line__empty--edge"></div>
       <div class="subway-line__empty--edge"></div>
       <div class="subway-line__empty--edge"></div>
-      ${stationGrid.map((stationId) => WagleLinkLoaderView(stationId)).join(" ")}
+      ${stationGrid.map((stationId: number) => WagleLinkLoaderView(stationId)).join(" ")}
     </div>
     ${NearWagleTooltipView()}
     ${NearWagleView()}

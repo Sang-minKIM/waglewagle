@@ -46,7 +46,7 @@ export const createRouter = (): Router => {
   let notFound = () => {};
   let lastPathname = "";
 
-  const router: Router = {} as Router;
+  const router = {} as Router;
 
   const checkRoutes = () => {
     const { pathname } = window.location;

@@ -1,6 +1,11 @@
-import { fetchCardList, getHomeInfo, fetchTagList, getHotStations } from "./controllers/api/getApi.js";
-import { HomeView } from "./views/pages/HomeView.js";
-import { WagleView } from "./views/pages/WagleView.js";
+import {
+  fetchCardList,
+  getHomeInfo,
+  fetchTagList,
+  getHotStations,
+} from "./controllers/api/getApi.js";
+import { HomeView } from "./views/pages/HomeView.ts";
+import { WagleView } from "./views/pages/WagleView.ts";
 
 export const createPages = (container: HTMLDivElement) => {
   const home = () => {
