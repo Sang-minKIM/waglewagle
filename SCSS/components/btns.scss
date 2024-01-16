@@ -59,6 +59,11 @@
   @extend %R_12;
 }
 
+.near-tooltip__tip {
+  width: 15px;
+  height: 8px;
+}
+
 
 .subway-line__near-btn {
   border-radius: 25px;
@@ -76,8 +81,8 @@
 }
 
 .near_img {
-  width: max-content;
-  height: max-content;
+  width: 24px;
+  height: 24px;
 }
 
 .near-btn__text {
