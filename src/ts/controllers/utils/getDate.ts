@@ -1,15 +1,15 @@
-export const getTime = (createdTime) => {
+export const getTime = (createdTime: Date) => {
   const originalDate = new Date(createdTime);
 
   // 같은날 올린 글 - HH:mm
-  const sameDayOptions = {
+  const sameDayOptions: Intl.DateTimeFormatOptions = {
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,
   };
 
   // 다른날 올린 글 - MM/dd HH:mm
-  const differentDayOptions = {
+  const differentDayOptions: Intl.DateTimeFormatOptions = {
     month: "2-digit",
     day: "2-digit",
     hour: "2-digit",
