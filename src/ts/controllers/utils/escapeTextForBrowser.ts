@@ -1,6 +1,6 @@
 const matchHtmlRegExp = /["'&<>]/;
 
-function escapeHtml(string) {
+function escapeHtml(string: string) {
   const str = "" + string;
   const match = matchHtmlRegExp.exec(str);
 
@@ -51,7 +51,7 @@ function escapeHtml(string) {
  * @param {*} text Text value to escape.
  * @return {string} An escaped string.
  */
-function escapeTextForBrowser(text) {
+function escapeTextForBrowser(text: any) {
   if (typeof text === "boolean" || typeof text === "number") {
     return "" + text;
   }

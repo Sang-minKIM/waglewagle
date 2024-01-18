@@ -1,4 +1,4 @@
-export const CardHeaderView = (img, title, time) => {
+export const CardHeaderView = (img: string, title: string, time: string) => {
   return `
 <header class="card__header">
     <div class="card__header__img-wrapper">

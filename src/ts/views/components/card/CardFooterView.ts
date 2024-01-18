@@ -1,6 +1,6 @@
 import heart from "/heart_img.svg";
 
-export const CardFooterView = (likeCount) => {
+export const CardFooterView = (likeCount: number) => {
   return `
 <footer class="js-likePost card__footer">
     <div class="card__footer__like-container">

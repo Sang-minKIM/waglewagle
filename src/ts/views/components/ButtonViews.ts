@@ -10,7 +10,14 @@ export const WagleLinkLoaderView = (stationId: number) => {
   `;
 };
 
-export const WagleLinkView = (stationId: number, stationData) => {
+interface StationData {
+  stationId: number;
+  stationName: string;
+  tagId: number;
+  contentCount: number;
+}
+
+export const WagleLinkView = (stationId: number, stationData: StationData) => {
   const pinId = stationData.tagId ? stationData.tagId : "default";
   let scaleValue;
 

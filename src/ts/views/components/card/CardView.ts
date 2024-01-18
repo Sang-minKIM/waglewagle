@@ -11,8 +11,8 @@ interface CardViewProps {
   imageUrl?: string;
   like: number;
   createdTime: Date;
-  id: string;
-  tagId?: string;
+  id: number;
+  tagId?: number;
 }
 
 export const CardView = ({
@@ -22,7 +22,7 @@ export const CardView = ({
   like,
   createdTime,
   id,
-  tagId = "0",
+  tagId = 0,
 }: CardViewProps) => {
   const profileImg = tagList[Number(tagId)].img;
   const formattedTime = getTime(createdTime);

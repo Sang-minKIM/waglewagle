@@ -1,4 +1,4 @@
-export const HotStationView = (id, stationName) => {
+export const HotStationView = (id: number, stationName: string) => {
   return `
     <li class="js-onHotStationSelect hot_station">
       <a data-navigate href="station/${id - 1}" style="display:flex">
@@ -6,5 +6,5 @@ export const HotStationView = (id, stationName) => {
         <span class="js-onHotStationSelect ho_station__text">${stationName}</span>
       </a>
     </li>
-  `
-}
+  `;
+};

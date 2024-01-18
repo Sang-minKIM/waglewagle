@@ -1,6 +1,11 @@
 import { UploadPhotoView } from "./UploadPhotoView.ts";
 
-export const UploadPhotoListView = (imageList: Record<string, string>[]) => {
+interface ImageData {
+  imageId: number;
+  imageURL: string;
+}
+
+export const UploadPhotoListView = (imageList: ImageData[]) => {
   return `
 <h4 class="upload__photo-label">짤 사용하기</h4>
 <section class="upload__photo-list">

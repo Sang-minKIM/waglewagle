@@ -3,7 +3,12 @@ import { UploadHeaderView } from "../components/upload/UploadHeaderView.ts";
 import { UploadPhotoListView } from "../components/upload/UploadPhotoListView.ts";
 import { UploadTagListView } from "../components/upload/UploadTagListView.ts";
 
-export const UploadView = (imageList: Record<string, string>[]) => {
+interface ImageData {
+  imageId: number;
+  imageURL: string;
+}
+
+export const UploadView = (imageList: ImageData[]) => {
   const { pathname } = window.location;
   const stationId = Number(pathname.split("/")[2]);
   const currStation = stationList[stationId];

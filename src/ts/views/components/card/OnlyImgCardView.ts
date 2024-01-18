@@ -1,4 +1,4 @@
-export const OnlyImgCardView = (img) => {
+export const OnlyImgCardView = (img: string) => {
   return `
 <img
   src="${img}"

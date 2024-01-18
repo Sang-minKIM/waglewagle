@@ -1,10 +1,15 @@
 import { likePost } from "../api/postApi";
 import { debounce } from "../utils/debounce";
 
-let pendingLikes = [];
+interface PendingLike {
+  id: number;
+  count: number;
+}
 
-const increaseLikeCount = (postId) => {
-  const existingObject = pendingLikes.find((like) => like.id == postId);
+let pendingLikes: PendingLike[] = [];
+
+const increaseLikeCount = (postId: string) => {
+  const existingObject = pendingLikes.find((like) => like.id === Number(postId));
   if (existingObject) {
     existingObject.count += 1;
   } else {
@@ -12,7 +17,7 @@ const increaseLikeCount = (postId) => {
   }
 };
 
-const animateHeart = (container) => {
+const animateHeart = (container: HTMLElement) => {
   const heartImg = document.createElement("img");
   heartImg.src = "/heart_img.svg";
   heartImg.alt = "heart";
@@ -37,13 +42,17 @@ const sendLikes = () => {
 
 const debouncedUpdateCount = debounce(sendLikes, 300);
 
-export const likePostHandler = (target) => {
-  const postId = target.closest(".wagle__main__card").id;
-  const heartContainer = document.getElementById(postId).querySelector(".card__footer__like-container");
-  const spanElement = document.getElementById(postId).querySelector(".card__footer__like-count");
+export const likePostHandler = (target: HTMLElement) => {
+  const postId = target.closest(".wagle__main__card")!.id;
+  const heartContainer = document
+    .getElementById(postId)!
+    .querySelector(".card__footer__like-container") as HTMLElement;
+  const spanElement = document
+    .getElementById(postId)!
+    .querySelector(".card__footer__like-count") as HTMLSpanElement;
 
   const currentCount = spanElement.textContent || spanElement.innerText;
-  spanElement.textContent = Number(currentCount) + 1;
+  spanElement.textContent = String(Number(currentCount) + 1);
 
   increaseLikeCount(postId);
   animateHeart(heartContainer);

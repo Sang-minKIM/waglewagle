@@ -84,7 +84,7 @@ export const getHotStations = async () => {
   }
 };
 
-export const getNearStation = async (lat: string, lng: string) => {
+export const getNearStation = async (lat: number, lng: number) => {
   const endpoint = "/v1/station/near";
   try {
     const response = await fetch(`${BASE_URL}${endpoint}?x=${lat}&y=${lng}`, {

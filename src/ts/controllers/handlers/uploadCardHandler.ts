@@ -6,7 +6,7 @@ import { uploadCard } from "../api/postApi.ts";
 let selectedTagId = "";
 let selectedImgId = "";
 
-export const uploadTagHandler = (target: HTMLFormElement) => {
+export const uploadTagHandler = (target: HTMLElement) => {
   const tagElement = target.closest(".tag") as HTMLElement;
   const list = [...tagElement.parentNode!.children];
   list.forEach((tag) => tag.classList.remove("selected-tag"));
@@ -14,7 +14,7 @@ export const uploadTagHandler = (target: HTMLFormElement) => {
   selectedTagId = tagElement.id;
 };
 
-export const waggleTagSelectHandler = (target: HTMLFormElement) => {
+export const waggleTagSelectHandler = (target: HTMLElement) => {
   const tagElement = target.closest(".tag") as HTMLElement;
   const list = [...tagElement.parentNode!.children];
   list.forEach((tag) => tag.classList.remove("selected-tag"));
@@ -24,7 +24,7 @@ export const waggleTagSelectHandler = (target: HTMLFormElement) => {
   fetchCardList({ stationId, selectedTagId });
 };
 
-export const tagSelectHandler = (target: HTMLFormElement) => {
+export const tagSelectHandler = (target: HTMLElement) => {
   const parent = target.closest("ul") as HTMLUListElement;
   if (parent.classList.contains("upload__tag-list")) {
     return uploadTagHandler(target);
@@ -34,7 +34,7 @@ export const tagSelectHandler = (target: HTMLFormElement) => {
   }
 };
 
-export const imgSelectHandler = (target: HTMLFormElement) => {
+export const imgSelectHandler = (target: HTMLElement) => {
   const imgElement = target.closest(".upload__photo") as HTMLElement;
   const list = [...imgElement.parentNode!.children];
   list.forEach((img) => img.classList.remove("selected-photo"));
@@ -58,6 +58,13 @@ const resetId = () => {
   selectedImgId = "";
 };
 
+interface UploadCardProps {
+  tagId?: number;
+  content: string;
+  stationId: number;
+  imageId?: number;
+}
+
 export const onModalSubmit = (event: Event) => {
   event.preventDefault();
   const form = event.target as HTMLFormElement;
@@ -68,7 +75,7 @@ export const onModalSubmit = (event: Event) => {
     tagId: Number(newCardFormData.tagId),
     stationId: Number(newCardFormData.stationId),
     imageId: Number(newCardFormData.imageId),
-  };
+  } as UploadCardProps;
 
   uploadCard(newCard);
   resetId();

@@ -1,6 +1,6 @@
 import escapeTextForBrowser from "../../../controllers/utils/escapeTextForBrowser";
 
-export const BothCardView = (text, img) => {
+export const BothCardView = (text: string, img: string) => {
   const sanitizedText = escapeTextForBrowser(text);
   return `
 <div class="card__content--both">

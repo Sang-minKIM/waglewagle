@@ -1,7 +1,7 @@
 import { getNearStation } from "../api/getApi";
 
-export const gotoNearWagle = (target) => {
-  const tooltipElement = document.querySelector(".subway-line__near-tooltip");
+export const gotoNearWagle = () => {
+  const tooltipElement = document.querySelector(".subway-line__near-tooltip") as HTMLElement;
   if (tooltipElement) {
     tooltipElement.style.display = "none";
   }
@@ -11,9 +11,9 @@ export const gotoNearWagle = (target) => {
       function (position) {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
-        getNearStation(latitude, longitude, target);
+        getNearStation(latitude, longitude);
       },
-      function (error) {
+      function () {
         alert("위치 정보를 가져올 수 없습니다.");
       }
     );
