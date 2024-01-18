@@ -1,12 +1,15 @@
-import { onClick, onModalClick } from "../events/onClick.ts";
+import { onClick } from "../events/onClick.ts";
+import { textCountHandler } from "../handlers/textCountHandler.ts";
 import { onModalSubmit } from "../handlers/uploadCardHandler.ts";
 
-const app = document.getElementById("app");
-const modal = document.querySelector(".modal");
+const $ = document.querySelector.bind(document);
+
+const app = $("#app") as HTMLDivElement;
+const modal = $(".modal") as HTMLDialogElement;
 
 export const initEventListener = () => {
   app.addEventListener("click", onClick);
-  modal.addEventListener("input", onClick);
-  modal.addEventListener("click", onModalClick);
+  modal.addEventListener("input", textCountHandler);
+  modal.addEventListener("click", onClick);
   modal.addEventListener("submit", onModalSubmit);
 };
