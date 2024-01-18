@@ -109,7 +109,7 @@ export const getNearStation = async (lat: string, lng: string) => {
   }
 };
 
-export const fetchTagList = async (stationId: string) => {
+export const fetchTagList = async (stationId: number) => {
   const endpoint = "/v1/station/tag/list";
   try {
     const response = await fetch(`${BASE_URL}${endpoint}?id=${stationId}`, {
