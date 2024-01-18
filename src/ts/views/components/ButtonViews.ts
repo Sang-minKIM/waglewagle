@@ -9,7 +9,8 @@ export const WagleLinkLoaderView = (stationId: number) => {
 <a data-navigate href="station/${stationId}"  class="subway-line__station" id="${stationId}"></a>
   `;
 };
-export const WagleLinkView = (stationId, stationData) => {
+
+export const WagleLinkView = (stationId: number, stationData) => {
   const pinId = stationData.tagId ? stationData.tagId : "default";
   let scaleValue;
 
