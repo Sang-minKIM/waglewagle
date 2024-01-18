@@ -1,11 +1,13 @@
+const $ = document.querySelector.bind(document);
+
 export const textCountHandler = ({ target }: Event) => {
   if (!(target instanceof HTMLTextAreaElement)) {
     return;
   }
 
   const length = target.value.length;
-  const textCnt = [...(target.parentNode?.children ?? [])][4];
-  const submitBtn = [...(target.parentNode?.children ?? [])][7] as HTMLButtonElement;
+  const textCnt = $(".upload__text-count");
+  const submitBtn = $(".upload__submit-btn") as HTMLButtonElement;
 
   if (!textCnt || !submitBtn) {
     return;
