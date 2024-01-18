@@ -5,9 +5,26 @@ import { CardFooterView } from "./CardFooterView.ts";
 import { CardHeaderView } from "./CardHeaderView.ts";
 // import { OnlyImgCardView } from "./OnlyImgCardView.ts";
 import { OnlyTextCardView } from "./OnlyTextCardView.ts";
+interface CardViewProps {
+  nickname: string;
+  content: string;
+  imageUrl?: string;
+  like: number;
+  createdTime: Date;
+  id: string;
+  tagId?: string;
+}
 
-export const CardView = ({ nickname, content, imageUrl, like, createdTime, id, tagId }) => {
-  const profileImg = tagId ? tagList[tagId].img : tagList[0].img;
+export const CardView = ({
+  nickname,
+  content,
+  imageUrl,
+  like,
+  createdTime,
+  id,
+  tagId = "0",
+}: CardViewProps) => {
+  const profileImg = tagList[Number(tagId)].img;
   const formattedTime = getTime(createdTime);
 
   return `
