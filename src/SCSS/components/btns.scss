@@ -59,7 +59,6 @@
   @extend %R_12;
 }
 
-
 .subway-line__near-btn {
   border-radius: 25px;
   background-color: $gray_700;
@@ -76,12 +75,17 @@
 }
 
 .near_img {
-  width: max-content;
-  height: max-content;
+  width: 24px;
+  height: 24px;
 }
 
 .near-btn__text {
   color: $gray_100;
   text-align: center;
   @extend %SB_14;
+}
+
+.near-tooltip__tip {
+  width: 15px;
+  height: 8px;
 }
