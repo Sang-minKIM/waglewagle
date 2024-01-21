@@ -2,7 +2,7 @@ import { reportReasonList } from "../../data";
 
 export const ConfirmView = () => {
   return `
-<h2>신고가 접수되었습니다.</h2>
+<h2>신고가 접수되었습니다. 신고된 글은 숨김 처리됩니다.</h2>
 <button class="js-onConfirm confirm__btn">확인</button>  
   `;
 };
