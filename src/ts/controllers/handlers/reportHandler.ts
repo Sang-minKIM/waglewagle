@@ -1,5 +1,7 @@
+import { fetchCardList } from "../api/getApi";
 import { postReport } from "../api/postApi";
 import { renderReportModal } from "../render";
+import { getStationId } from "../utils/getStationId";
 import { saveReport } from "../utils/reportFn";
 
 const report = document.querySelector(".report") as HTMLDialogElement;
@@ -23,7 +25,8 @@ export const closeReport = () => {
 
 export const confirmHandler = () => {
   closeConfirm();
-  // 리렌더링
+  const stationId = getStationId();
+  fetchCardList({ stationId });
 };
 
 const DB_INDEX_CORRECTION_FACTOR = 1;
