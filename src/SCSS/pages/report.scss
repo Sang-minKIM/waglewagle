@@ -1,0 +1,133 @@
+.report {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 312px;
+  height: fit-content;
+  border: 1px solid var(--gray_800, #232834);
+  border-radius: 20px;
+  background-color: $gray_850;
+  color: $gray_100;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  padding: 16px;
+
+  .report__header {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-bottom: 14px;
+    h2 {
+      @extend %B_18;
+    }
+  }
+
+  .report__header--close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: url("/cancle_img.svg") no-repeat center;
+  }
+
+  .report__reason {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .report__reason label {
+    @extend %R_14;
+    color: $gray_200;
+    display: block;
+    margin-bottom: 10px;
+    [type="radio"] {
+      vertical-align: middle;
+      appearance: none;
+      -webkit-appearance: none; // 웹킷 브라우저에서 기본 스타일 제거
+      -moz-appearance: none; // 모질라 브라우저에서 기본 스타일 제거
+      border: 1px solid $gray_700;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+    [type="radio"]:checked {
+      background-color: $green_500; // 체크 시 내부 원으로 표시될 색상
+      border: 3px solid $gray_850; // 테두리가 아닌, 테두리와 원 사이의 색상
+      box-shadow: 0 0 0 1px $gray_700; // 얘가 테두리가 됨
+    }
+  }
+
+  .report-reason input {
+    margin-right: 10px;
+  }
+
+  .report__submit {
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-top: 33px;
+
+    @extend %B_16;
+    background-color: $green_600;
+    color: $gray_900;
+    &:disabled {
+      background-color: $gray_700;
+      color: $gray_800;
+      cursor: default;
+    }
+    &:enabled:active {
+      background-color: $green_700;
+    }
+  }
+}
+
+.confirm {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 312px;
+  height: fit-content;
+  border: 1px solid var(--gray_800, #232834);
+  border-radius: 20px;
+  background-color: $gray_850;
+  color: $gray_100;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  padding: 16px;
+
+  h2 {
+    @extend %SB_16;
+    color: $gray_100;
+    display: flex;
+    width: 100%;
+    height: 48px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .confirm__btn {
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    @extend %B_16;
+    background-color: $gray_700;
+    color: $green_600;
+  }
+}

@@ -8,6 +8,7 @@ export const CardHeaderView = (img: string, title: string, time: string) => {
         <h4 class="card__header__info__title">${title}</h4>
         <span class="card__header__info__time">${time} 작성됨</span>
     </div>
+    <button class="js-onOpenReport report-btn">신고</button>
 </header>    
     `;
 };

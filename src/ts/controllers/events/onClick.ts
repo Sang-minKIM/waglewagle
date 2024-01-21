@@ -6,6 +6,7 @@ import {
   imgSelectHandler,
 } from "../handlers/uploadCardHandler.ts";
 import { closeDialog } from "../handlers/modalHandler.ts";
+import { openReport, closeReport, submitReport, closeConfirm } from "../handlers/reportHandler.ts";
 
 interface ClickHandlerMap {
   [key: string]: (target: HTMLElement) => void;
@@ -18,6 +19,10 @@ const clickHandlerMap: ClickHandlerMap = {
   "js-nearWagle": gotoNearWagle,
   "js-likePost": likePostHandler,
   "js-onCloseModal": closeDialog,
+  "js-onOpenReport": openReport,
+  "js-onCloseReport": closeReport,
+  "js-onSubmitReport": submitReport,
+  "js-onConfirm": closeConfirm,
 };
 
 export const onClick = ({ target }: MouseEvent) => {
