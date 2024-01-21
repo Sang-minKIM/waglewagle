@@ -55,3 +55,27 @@ export const likePost = async (postData: PostData) => {
     console.error("Error fetching data:", error instanceof Error ? error.message : error);
   }
 };
+
+interface ReportProps {
+  postId: number; // 신고하는 게시글 id
+  reportId: number; // 신고 사유 아이디
+}
+
+export const postReport = async (reportData: ReportProps) => {
+  const endpoint = "/v2/report";
+  try {
+    const response = await fetch(`${BASE_URL}${endpoint}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(reportData),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error instanceof Error ? error.message : error);
+  }
+};

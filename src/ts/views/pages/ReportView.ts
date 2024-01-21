@@ -26,6 +26,6 @@ export const ReportView = (target: HTMLElement) => {
   <main class="report__reason">
    ${reportReasonList.map((reason, id) => ReportReasonView({ id, text: reason })).join("")}
   </main>
-  <button data-cardId="${cardId}" type="button" class="js-onSubmitReport report__submit" disabled>신고하기</button>    
+  <button data-card-id="${cardId}" type="button" class="js-onSubmitReport report__submit" disabled>신고하기</button>    
     `;
 };
