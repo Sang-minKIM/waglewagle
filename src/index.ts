@@ -4,11 +4,11 @@ import { screenSizeHandler } from "./ts/controllers/handlers/screenSizeHandler.t
 import { initEventListener } from "./ts/controllers/init/initEventListener.ts";
 
 import { closeDialog } from "./ts/controllers/handlers/modalHandler.ts";
+import { initReportList } from "./ts/controllers/init/initReportList.ts";
 
-(function () {
-  screenSizeHandler();
-  initEventListener();
-})();
+screenSizeHandler();
+initEventListener();
+initReportList();
 
 const container = document.getElementById("app") as HTMLDivElement;
 

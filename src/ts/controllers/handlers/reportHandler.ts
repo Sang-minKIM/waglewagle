@@ -1,5 +1,6 @@
 import { postReport } from "../api/postApi";
 import { renderReportModal } from "../render";
+import { saveReport } from "../utils/reportFn";
 
 const report = document.querySelector(".report") as HTMLDialogElement;
 const confirm = document.querySelector(".confirm") as HTMLDialogElement;
@@ -20,6 +21,11 @@ export const closeReport = () => {
   report.close();
 };
 
+export const confirmHandler = () => {
+  closeConfirm();
+  // 리렌더링
+};
+
 const DB_INDEX_CORRECTION_FACTOR = 1;
 
 export const submitReport = (target: HTMLElement) => {
@@ -31,6 +37,7 @@ export const submitReport = (target: HTMLElement) => {
   const reportId = Number(selectedReason?.value) + DB_INDEX_CORRECTION_FACTOR;
 
   postReport({ postId, reportId });
+  saveReport(postId);
   closeReport();
   showConfirm();
 };

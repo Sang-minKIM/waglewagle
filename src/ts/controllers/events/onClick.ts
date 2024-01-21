@@ -6,7 +6,12 @@ import {
   imgSelectHandler,
 } from "../handlers/uploadCardHandler.ts";
 import { closeDialog } from "../handlers/modalHandler.ts";
-import { openReport, closeReport, submitReport, closeConfirm } from "../handlers/reportHandler.ts";
+import {
+  openReport,
+  closeReport,
+  submitReport,
+  confirmHandler,
+} from "../handlers/reportHandler.ts";
 
 interface ClickHandlerMap {
   [key: string]: (target: HTMLElement) => void;
@@ -22,7 +27,7 @@ const clickHandlerMap: ClickHandlerMap = {
   "js-onOpenReport": openReport,
   "js-onCloseReport": closeReport,
   "js-onSubmitReport": submitReport,
-  "js-onConfirm": closeConfirm,
+  "js-onConfirm": confirmHandler,
 };
 
 export const onClick = ({ target }: MouseEvent) => {
