@@ -27,7 +27,7 @@ ex) 오늘 출근 지옥이다..."
     ></textarea>
     <span class="upload__text-count">0/100</span>
     ${UploadPhotoListView(imageList)}
-    <button type="submit" class="upload__submit-btn">작성 완료</button>
+    <button type="submit" class="upload__submit-btn" disabled>작성 완료</button>
 </form>
     `;
 };

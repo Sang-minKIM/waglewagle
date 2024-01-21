@@ -21,15 +21,15 @@
   align-items: center;
   flex-shrink: 0;
   margin: 48px 0;
-  background-color: $gray_700;
   @extend %B_16;
-  color: $gray_800;
-}
-
-.upload__submit-btn--active {
   background-color: $green_600;
   color: $gray_900;
-  &:active {
+  &:disabled {
+    background-color: $gray_700;
+    color: $gray_800;
+    cursor: default;
+  }
+  &:enabled:active {
     background-color: $green_700;
   }
 }
