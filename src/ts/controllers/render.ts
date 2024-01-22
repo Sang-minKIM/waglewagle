@@ -5,14 +5,16 @@ import { HotStationListView } from "../views/components/HotStationListView.ts";
 import { TagView } from "../views/components/TagView.ts";
 import { WagleEmptyView } from "../views/components/wagle/WagleEmptyView.ts";
 import { WagleMainView } from "../views/components/wagle/WagleMainView.ts";
+import { ConfirmView, ReportView } from "../views/pages/ReportView.ts";
 import { UploadView } from "../views/pages/UploadView.ts";
+import { getReports } from "./utils/reportFn.ts";
 
 const modal = document.querySelector(".modal") as HTMLDialogElement;
 
 interface Card {
   id: number;
   nickname: string;
-  createdTime: string;
+  createdTime: Date;
   imageUrl?: string;
   tagId?: number;
   like: number;
@@ -26,7 +28,11 @@ interface ImageData {
 
 export const renderWagleList = (cardList: Card[]) => {
   const wagleList = document.querySelector(".wagle__list") as HTMLElement;
-  wagleList.innerHTML = cardList && cardList.length ? WagleMainView(cardList) : WagleEmptyView();
+  const reportList = getReports();
+  const filteredCardList = cardList?.filter((card) => reportList.includes(card.id) === false);
+  wagleList.innerHTML = filteredCardList.length
+    ? WagleMainView(filteredCardList)
+    : WagleEmptyView();
 };
 
 export const renderModal = (imageList: ImageData[]) => {
@@ -65,4 +71,11 @@ export const renderPin = (stations: StationData[]) => {
   ${stationGrid.map((stationId) => WagleLinkView(stationId, stations[stationId])).join(" ")}
 `;
   document.querySelector(".subway-line")!.innerHTML = subwayLineHTML;
+};
+
+export const renderReportModal = (target: HTMLElement) => {
+  const report = document.querySelector(".report") as HTMLDialogElement;
+  const confirm = document.querySelector(".confirm") as HTMLDialogElement;
+  report.innerHTML = ReportView(target);
+  confirm.innerHTML = ConfirmView();
 };

@@ -21,7 +21,9 @@ export const waggleTagSelectHandler = (target: HTMLElement) => {
   tagElement.classList.add("selected-tag");
   selectedTagId = tagElement.id;
   const stationId = getStationId();
-  fetchCardList({ stationId, selectedTagId });
+  console.log(stationId, selectedTagId);
+  const tagId = selectedTagId === "0" ? "" : selectedTagId;
+  fetchCardList({ stationId, tagId });
 };
 
 export const tagSelectHandler = (target: HTMLElement) => {
