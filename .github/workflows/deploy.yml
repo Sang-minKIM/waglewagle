@@ -2,29 +2,59 @@ name: git push into another repo to deploy to vercel
 
 on:
   push:
-    branches: [main]
+    branches: [ "dev" ]
+  pull_request:
+    branches: [ "dev" ]
+
+permissions:
+  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: pandoc/latex
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Install mustache (to update the date)
-        run: apk add ruby && gem install mustache
-      - name: creates output
-        run: sh ./build.sh
-      - name: Pushes to another repository
-        id: push_directory
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.AUTO_DEPLOY }}
-        with:
-          source-directory: 'output'
-          destination-github-username: Sang-minKIM
-          destination-repository-name: mobil2team-FE
-          user-email: ${{ secrets.OFFICIAL_ACCOUNT_EMAIL }}
-          commit-message: ${{ github.event.commits[0].message }}
-          target-branch: main
-      - name: Test get variable exported by push-to-another-repository
-        run: echo $DESTINATION_CLONED_DIRECTORY
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Create secret file
+      run: |
+        touch ./.env
+        echo "${{ secrets.ENV}}" > ./.env
+      shell: bash
+
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build and push
+      id: docker_build
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: ${{ secrets.DOCKER_REPO }}:latest
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_EC2_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_EC2_SECRET_ACCESS_KEY }}
+        aws-region: ap-northeast-2
+
+    - name: Deploy
+      uses: appleboy/ssh-action@v0.1.6
+      with:
+        host: ${{ secrets.EC2_SERVER_HOST }}
+        port: 22
+        username: ${{ secrets.EC2_USERNAME }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        script: |
+          docker stop ${{ secrets.CONTAINER_NAME }}
+          docker rm ${{ secrets.CONTAINER_NAME }}
+          docker rmi $(docker images -q)
+          docker pull ${{ secrets.DOCKER_REPO }}
+          docker run -d -p 5173:5173 --name ${{ secrets.CONTAINER_NAME }} ${{ secrets.DOCKER_REPO }}
