@@ -15,7 +15,7 @@
 
 ## Deploy ✨
 
-- **Waglewagle Website** : [와글와글 지하철]([https://mobil2team-fe.vercel.app/](https://www.waglewagle.store/))<br>
+- **Waglewagle Website** : [와글와글 지하철](https://www.waglewagle.store/)<br>
 
 <br/>
 
