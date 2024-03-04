@@ -15,7 +15,7 @@
 
 ## Deploy ✨
 
-- **Waglewagle Website** : [https://mobil2team-fe.vercel.app/](https://mobil2team-fe.vercel.app/)<br>
+- **Waglewagle Website** : [와글와글 지하철]([https://mobil2team-fe.vercel.app/](https://www.waglewagle.store/))<br>
 
 <br/>
 
@@ -76,7 +76,7 @@
 ## Stacks 🐈
 
 ### Environment
-
+![VSCode](https://img.shields.io/badge/VisualStudioCode-007ACC?style=for-the-badge&logo=VisualStudioCode&logoColor=white)
 ![Intellij](https://img.shields.io/badge/Intellijidea-000000?style=for-the-badge&logo=intellijidea&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white)
 ![Github](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white)
