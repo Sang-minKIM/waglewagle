@@ -5,4 +5,9 @@ export default defineConfig({
     test: {
         environment: "happy-dom",
     },
+    server: {
+        hmr: {
+            overlay: false,
+        },
+    },
 });
