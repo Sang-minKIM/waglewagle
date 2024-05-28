@@ -4,7 +4,7 @@
 
 <br/>  
 
-<img width="519" alt="로고_다크" src="https://github.com/softeerbootcamp-3rd/softee5-mobil2team-FE/assets/87116017/318119f1-2af1-41d7-8455-543817e1cd17">  
+<img width="300" alt="로고_다크" src="https://github.com/softeerbootcamp-3rd/softee5-mobil2team-FE/assets/87116017/318119f1-2af1-41d7-8455-543817e1cd17">  
 
 
 <br/>
@@ -13,11 +13,73 @@
 
 </div>
 
-## Deploy ✨
+## About Project 🚋
 
-- **Waglewagle Website** : [와글와글 지하철](https://www.waglewagle.store/)<br>
+### **소프티어 부트캠프 3기 - 워밍업 프로젝트 소프티5, 모빌2팀**
+
+개발 기간  
+> ver.1: 2024.01.04 ~ 2024.01.10  
+> ver.2: 2024.01.11 ~ 2024.02.13
+
+#### 지루한 지하철.. 내 옆 사람은 무슨 생각하지? 🤔💭
+
+지하철을 타고있는 사람들의 공감대를 바탕으로 콘텐츠를 공유/탐색하며 지하철 이동 중의 지루함을 해소하는 웹서비스
+
+### 1. 지금 내 생각은❗️
+
+역 별로 소소한 글을 올려 당장의 나의 기분을 표현하고 다른 사람에게 정보를 공유한다.
+
+### 2. 지금 다른 사람들은❓
+
+비슷한 시간대에 지하철을 타는 사람들의 글을 통해 공감대를 형성하고 지루한 지하철에서의 시간을 달랜다.
+<br/>(지하철 이용의 지루함 공감, 재밌는 짤 업로드 등)
+
+### 3. 와글와글 지하철 ⁉️
+
+정서를 표현하는 캐릭터와 공감성을 담은 재치있는 랜덤 닉네임을 통해 소소한 재미를 부여한다.
+<br/>(ex. 닉네임: 출근하기 싫은 박명수)
+
 
 <br/>
+
+## Sangmin's Contribution 😎
+### 0. 서비스 설계
+- `User interaction`에 따라 `View`를 업데이트 하도록 프로젝트를 설계하여 데이터 흐름을 제어
+- `Vanilla JS`를 사용해 `React`처럼 `JS`에서 `HTML`을 삽입하도록 하여 컴포넌트 단위로 UI를 재활용
+- 이벤트 위임을 활용하여 최상위에서 이벤트를 제어, 이벤트 map 객체를 활용해 가독성 향상
+![image](https://github.com/Sang-minKIM/waglewagle/assets/87116017/69a5aaee-69d1-4812-a613-23f139121d60)
+
+
+### 1. 노선도 화면
+- `geolocationAPI`와 `element.scrollIntoView`를 활용해 현재 위치 정보를 바탕으로 가까운 역으로 화면 이동 
+- `SCSS`의 반복문을 활용해 게시글 수가 많은 역의 pin이 커지도록 애니메이션 적용
+- `CSS Grid`를 활용해 지하철 노선도 표현  
+
+    ![홈화면](https://github.com/Sang-minKIM/waglewagle/assets/87116017/e3b8296e-cf9f-4274-bb12-793f775204a7)  
+
+### 2. 게시글 화면
+- `History API`를 활용한 `SPA Router`를 구현해 `Vanilla JS` 환경에서 새로고침 없는 페이지 전환 제공
+- 게시글 로딩중 스켈레톤 UI 적용
+  
+    ![게시글보기](https://github.com/Sang-minKIM/waglewagle/assets/87116017/4187625d-3afd-4227-a47c-b022400cbc15)
+    ![역간이동](https://github.com/Sang-minKIM/waglewagle/assets/87116017/51992c69-b8c8-4ab7-bea3-38a2a3fe1356)
+  
+- 태그별 게시글 모아보기 제공  
+    ![태그분류](https://github.com/Sang-minKIM/waglewagle/assets/87116017/2ce5e688-4cba-4d5a-a43e-223c6ef158e3)
+  
+- 부적절한 게시글 신고 기능 제공 / localStorage를 활용해 신고 시 즉시 가리기, 누적 5회 이상 신고 게시글은 DB에서 삭제  
+  ![게시글 신고](https://github.com/Sang-minKIM/waglewagle/assets/87116017/14394058-686e-481e-81f0-ff9802cb1c34)  
+
+
+### 3. 게시글 작성 화면
+- 글 또는 사진은 적어도 1개 이상 필수로 선택
+- `문자열 Escape`를 활용해 `HTML` 태그를 `엔티티`로 변경하여 XSS 공격 방지  
+    ![게시글작성](https://github.com/Sang-minKIM/waglewagle/assets/87116017/6d31dac1-a894-4ba4-ad55-238cab27aee7)
+
+---
+
+## Video 📺
+
 
 ## Our Team 🌿
 
@@ -43,35 +105,7 @@
 
 <br/>
 
-## Aboud Project 🚋
 
-### **소프티어 부트캠프 3기 - 워밍업 프로젝트 소프티5, 모빌2팀**
-
-> 개발 기간: 2024.01.04 ~
-
-#### 지루한 지하철.. 내 옆 사람은 무슨 생각하지? 🤔💭
-
-지하철을 타고있는 사람들의 공감대를 바탕으로 콘텐츠를 공유/탐색하며 지하철 이동 중의 지루함을 해소하는 웹서비스
-
-<br/>
-
-## Functions 📪
-
-### 1. 지금 내 생각은❗️
-
-역 별로 소소한 글을 올려 당장의 나의 기분을 표현하고 다른 사람에게 정보를 공유한다.
-
-### 2. 지금 다른 사람들은❓
-
-비슷한 시간대에 지하철을 타는 사람들의 글을 통해 공감대를 형성하고 지루한 지하철에서의 시간을 달랜다.
-<br/>(지하철 이용의 지루함 공감, 재밌는 짤 업로드 등)
-
-### 3. 와글와글 지하철 ⁉️
-
-정서를 표현하는 캐릭터와 공감성을 담은 재치있는 랜덤 닉네임을 통해 소소한 재미를 부여한다.
-<br/>(ex. 닉네임: 출근하기 싫은 박명수)
-
-<br/>
 
 ## Stacks 🐈
 
@@ -107,117 +141,7 @@
 ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 
----
 
-## Pages 📺
 
-### 홈화면
 
-<img src = "https://github.com/softeerbootcamp-3nd/softee5-mobil2team-BE/assets/48647199/faf1c2ea-62af-42c4-af08-fc4ceb2930c2" width="22%" height="22%">
-<img src = "https://github.com/softeerbootcamp-3nd/softee5-mobil2team-BE/assets/48647199/75587ce1-efe4-46dd-b8ba-328c8e0ff25b" width="22%" height="22%">
-<img src = "https://github.com/softeerbootcamp-3nd/softee5-mobil2team-BE/assets/48647199/16e3f658-99d3-4458-bffc-9cb3f9d22d0a" width="22%" height="22%">
 
-### 와글와글 글 쓰기
-
-<img src = "https://github.com/softeerbootcamp-3nd/softee5-mobil2team-BE/assets/48647199/652599a8-a5b0-4ce0-a9ca-3f787af72357" width="22%" height="22%">
-<img src = "https://github.com/softeerbootcamp-3nd/softee5-mobil2team-BE/assets/48647199/637e66c7-4340-44df-8129-e4f56197f795" width="22%" height="22%">
-<img src = "https://github.com/softeerbootcamp-3nd/softee5-mobil2team-BE/assets/48647199/1aa154b0-bed8-4550-b72b-fe168fef7ffb" width="22%" height="22%">
-
-### 와글와글 글 보기
-
-<img src = "https://github.com/softeerbootcamp-3nd/softee5-mobil2team-BE/assets/48647199/3ca3d145-f1a7-4728-aa48-7a43b62e37ac" width="22%" height="22%">
-
-### 화면 Flow
-
-![image](https://github.com/softeerbootcamp-3nd/softee5-mobil2team-BE/assets/48647199/19801b34-ff63-4786-a071-7b409c12f9b8)
-
----
-
-## 아키텍쳐 🛠️
-
-### ER Diagram
-
-<img src = "https://github.com/softeerbootcamp-3nd/softee5-mobil2team-FE/assets/48647199/7f7701dd-4c45-4bfc-aac7-4805c1d62ef3" width="75%" height="75%">
-
-### FrontEnd Directory Structure
-
-```bash
-├── README.md
-├── .gitignore
-├── build.sh
-├── index.html
-├── index.js
-├── package-lock.json
-├── package.json
-├── .github
-│   └── workflows
-│       └── deploy.yml
-├── JS
-│   ├── controllers
-│   │   ├── api
-│   │   ├── events
-│   │   ├── handlers
-│   │   ├── init
-│   │   ├── utils
-│   │   ├── render.js
-│   ├── views
-│   │   ├── components
-│   │   │   └── card
-│   │   │   └── upload
-│   │   │   └── wagle
-│   │   └── pages
-│   ├── data.js
-│   ├── pages.js
-│   └── router.js
-├── SCSS
-│   ├── components
-│   ├── pages
-│   ├── reset.scss
-│   ├── style.scss
-│   └── variables.scss
-└── public
-    ├── pin
-    └── tag
-
-```
-
-### BackEnd Directory Structure
-
-```bash
-├── README.md
-├── .gitignore
-├── Dockerfile
-├── LICENSE
-├── build.gradle
-├── gradlew
-├── gradlew.bat
-├── settings.gradle
-├── .github
-│   └── workflows
-│       └── gradle.yml
-├── data
-│   ├── demo.mv.db
-│   └── demo.trace.db
-├── document
-│   ├── ground_rule.md
-│   ├── dictionary.md
-│   └── trouble_shooting.md
-├── gradlew
-│   └── wrapper
-└── src
-    ├── main
-    │   ├── java/com/softee5/mobil2team
-    │   │   ├── config
-    │   │   ├── controller
-    │   │   ├── dto
-    │   │   ├── entity
-    │   │   ├── repository
-    │   │   ├── service
-    │   │   └── Mobil2teamApplication.java
-    │   └── resources
-    │       ├── static
-    │       │   └── images
-    │       └── application.yml
-    └── test/java/com/softee5/mobil2team
-
-```
