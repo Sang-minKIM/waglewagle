@@ -64,22 +64,26 @@
     ![게시글보기](https://github.com/Sang-minKIM/waglewagle/assets/87116017/4187625d-3afd-4227-a47c-b022400cbc15)
     ![역간이동](https://github.com/Sang-minKIM/waglewagle/assets/87116017/51992c69-b8c8-4ab7-bea3-38a2a3fe1356)
   
-- 태그별 게시글 모아보기 제공  
+- 태그별 게시글 모아보기 제공
+  
     ![태그분류](https://github.com/Sang-minKIM/waglewagle/assets/87116017/2ce5e688-4cba-4d5a-a43e-223c6ef158e3)
   
-- 부적절한 게시글 신고 기능 제공 / localStorage를 활용해 신고 시 즉시 가리기, 누적 5회 이상 신고 게시글은 DB에서 삭제  
+- 부적절한 게시글 신고 기능 제공 / localStorage를 활용해 신고 시 즉시 가리기, 누적 5회 이상 신고 게시글은 DB에서 삭제
+  
   ![게시글 신고](https://github.com/Sang-minKIM/waglewagle/assets/87116017/14394058-686e-481e-81f0-ff9802cb1c34)  
 
 
 ### 3. 게시글 작성 화면
 - 글 또는 사진은 적어도 1개 이상 필수로 선택
-- `문자열 Escape`를 활용해 `HTML` 태그를 `엔티티`로 변경하여 XSS 공격 방지  
+- `문자열 Escape`를 활용해 `HTML` 태그를 `엔티티`로 변경하여 XSS 공격 방지
+  
     ![게시글작성](https://github.com/Sang-minKIM/waglewagle/assets/87116017/6d31dac1-a894-4ba4-ad55-238cab27aee7)
 
----
 
 ## Video 📺
-
+- 와글와글 시연영상 (아래의 이미지를 클릭하시면 유튜브 링크로 연결됩니다.)
+  
+    [![게시글보기](https://github.com/Sang-minKIM/waglewagle/assets/87116017/4187625d-3afd-4227-a47c-b022400cbc15)](https://www.youtube.com/watch?v=4DGbPUgZag4)
 
 ## Our Team 🌿
 
