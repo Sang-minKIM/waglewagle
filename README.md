@@ -146,6 +146,12 @@
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 
 
+## 수상내역 (전체 15개 팀)
+'써보고 싶은 서비스 1위'  
+'완성도 높은 서비스 1위'
+
+<img width="300" alt="수상 사진" src="https://github.com/user-attachments/assets/1830ddaf-7891-49a3-acbb-8634ef738f9b">  
+
 
 
 
